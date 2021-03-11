@@ -1,0 +1,7 @@
+C:\Users\86136\source\repos\classwork4\classwork4\bin\Debug\classwork4.exe.config
+C:\Users\86136\source\repos\classwork4\classwork4\bin\Debug\classwork4.exe
+C:\Users\86136\source\repos\classwork4\classwork4\bin\Debug\classwork4.pdb
+C:\Users\86136\source\repos\classwork4\classwork4\obj\Debug\classwork4.csprojAssemblyReference.cache
+C:\Users\86136\source\repos\classwork4\classwork4\obj\Debug\classwork4.csproj.CoreCompileInputs.cache
+C:\Users\86136\source\repos\classwork4\classwork4\obj\Debug\classwork4.exe
+C:\Users\86136\source\repos\classwork4\classwork4\obj\Debug\classwork4.pdb
