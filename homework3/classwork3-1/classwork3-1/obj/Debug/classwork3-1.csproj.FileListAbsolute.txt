@@ -1,0 +1,7 @@
+C:\Users\86136\source\repos\classwork3-1\classwork3-1\bin\Debug\classwork3-1.exe.config
+C:\Users\86136\source\repos\classwork3-1\classwork3-1\bin\Debug\classwork3-1.exe
+C:\Users\86136\source\repos\classwork3-1\classwork3-1\bin\Debug\classwork3-1.pdb
+C:\Users\86136\source\repos\classwork3-1\classwork3-1\obj\Debug\classwork3-1.csprojAssemblyReference.cache
+C:\Users\86136\source\repos\classwork3-1\classwork3-1\obj\Debug\classwork3-1.csproj.CoreCompileInputs.cache
+C:\Users\86136\source\repos\classwork3-1\classwork3-1\obj\Debug\classwork3-1.exe
+C:\Users\86136\source\repos\classwork3-1\classwork3-1\obj\Debug\classwork3-1.pdb
