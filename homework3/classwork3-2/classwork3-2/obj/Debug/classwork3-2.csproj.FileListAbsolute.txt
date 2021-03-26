@@ -5,3 +5,10 @@ C:\Users\86136\source\repos\classwork3-2\classwork3-2\obj\Debug\classwork3-2.csp
 C:\Users\86136\source\repos\classwork3-2\classwork3-2\obj\Debug\classwork3-2.csproj.CoreCompileInputs.cache
 C:\Users\86136\source\repos\classwork3-2\classwork3-2\obj\Debug\classwork3-2.exe
 C:\Users\86136\source\repos\classwork3-2\classwork3-2\obj\Debug\classwork3-2.pdb
+E:\C#作业\homework\homework3\classwork3-2\classwork3-2\bin\Debug\classwork3-2.exe.config
+E:\C#作业\homework\homework3\classwork3-2\classwork3-2\bin\Debug\classwork3-2.exe
+E:\C#作业\homework\homework3\classwork3-2\classwork3-2\bin\Debug\classwork3-2.pdb
+E:\C#作业\homework\homework3\classwork3-2\classwork3-2\obj\Debug\classwork3-2.csprojAssemblyReference.cache
+E:\C#作业\homework\homework3\classwork3-2\classwork3-2\obj\Debug\classwork3-2.csproj.CoreCompileInputs.cache
+E:\C#作业\homework\homework3\classwork3-2\classwork3-2\obj\Debug\classwork3-2.exe
+E:\C#作业\homework\homework3\classwork3-2\classwork3-2\obj\Debug\classwork3-2.pdb

@@ -202,6 +202,8 @@ class Program
                 sum += a[i];
             }
             Console.WriteLine("10个形状的面积之和为:"+sum);
-        }
+            Console.ReadLine();
+    }
+    
     }
 
