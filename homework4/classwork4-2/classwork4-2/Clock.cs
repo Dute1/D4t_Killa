@@ -9,12 +9,18 @@ namespace classwork4_2
 {
     class Clock
     {   
+
+        //闹钟的几个基本属性
         public int hour { get; set; }
         public int minute { get; set; }
         public int second { get; set; }
         public delegate void Clockhandler(object sender);
+
+        //定义事件
         public event Clockhandler Tick;
         public event Clockhandler Alarm;
+
+        //读秒
         public void TimeGoesBy()
         {
             second++;
@@ -32,8 +38,10 @@ namespace classwork4_2
             {
                 hour = 0;
             }
+            Console.WriteLine(DateTime.Now.Hour+":"+DateTime.Now.Minute+":"+DateTime.Now.Second);
         }
 
+        //闹钟响铃的方法
         public void ClockRing()
         {
             hour = DateTime.Now.Hour;
@@ -44,7 +52,7 @@ namespace classwork4_2
             {
                 Tick(this);
                 passbytime++;
-                if (passbytime == 5)
+                if (this.hour==10&&this.minute==12&&this.second==0)
                 { 
                     Alarm(this);
                     passbytime = 0;

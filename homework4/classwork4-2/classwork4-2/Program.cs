@@ -9,10 +9,14 @@ namespace classwork4_2
     
     class Program
     {
+
+        //tick事件的注册
         static void ShowTick(object sender)
         {
             Console.WriteLine("tick..");
         }
+
+        //alarm事件的注册
         static void ShowAlarm(object sender)
         {
             Console.WriteLine("闹钟响了！当前时间为" + DateTime.Now.Hour.ToString() + "时" + DateTime.Now.Minute.ToString() + "分" + DateTime.Now.Second.ToString() + "秒.");
