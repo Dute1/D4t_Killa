@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace classwork5
 {
-    class customer
+    public class customer
     {
         public string customerName { get; set; }    //顾客名称
         public string customerAddress { get; set; }     //顾客地址
+
+
         public customer(string name,string address)
         {
             this.customerName = name;
             this.customerAddress = address;
         }
+        public customer() { }
+
+
         public override string ToString()
         {
             return "\n顾客名称:" + customerName + "\n顾客地址:" + customerAddress+"\n\n";

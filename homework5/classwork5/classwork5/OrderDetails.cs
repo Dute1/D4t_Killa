@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace classwork5
 {
     //订单明细:货物，顾客，货物数量
-    class OrderDetails
+    public class OrderDetails
     {
         /*public string commodityID { get; set; }  //货号
         public string commodityName { get; set; }   //商品名称
@@ -24,6 +24,9 @@ namespace classwork5
             this.customer = cus;
             this.commodity = com;
         }
+
+        public OrderDetails() { }
+
         public override string ToString()
         {
             return commodity.ToString() + customer.ToString();  //+"\n货物数量:" + amount;

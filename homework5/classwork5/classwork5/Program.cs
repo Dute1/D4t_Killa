@@ -16,10 +16,13 @@ namespace classwork5
             while(true)
             {
                 Console.WriteLine("*****请选择你要使用的功能*****");
-                Console.WriteLine("1.添加订单");
-                Console.WriteLine("2.删除订单");
-                Console.WriteLine("3.查询订单");
-                Console.WriteLine("4.修改订单");
+                Console.WriteLine("*        1.添加订单          *");
+                Console.WriteLine("*        2.删除订单          *");
+                Console.WriteLine("*        3.查询订单          *");
+                Console.WriteLine("*        4.修改订单          *");
+                Console.WriteLine("*        5.导出订单          *");
+                Console.WriteLine("*        6.导入订单          *");
+                Console.WriteLine("******************************");
                 string use = Console.ReadLine();
                 int n = int.Parse(use);
                 switch(n)
@@ -36,7 +39,15 @@ namespace classwork5
                     case 4:
                         os.modify();
                         break;
+                    case 5:
+                        os.Export();
+                        break;
+                    case 6:
+                        os.Import();
+                        break;
                 }
+
+
                 
             }
         

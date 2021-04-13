@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace classwork5
 {
-    class commodity
+    public class commodity
     {
         public string commodityID { get; set; }  //货号
         public string commodityName { get; set; }   //商品名称
@@ -18,6 +18,7 @@ namespace classwork5
             this.commodityID = id;
             this.price = price;
         }
+        public commodity() { }
 
         public override string ToString()
         {

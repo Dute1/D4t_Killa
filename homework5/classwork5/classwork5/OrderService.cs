@@ -5,11 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
+
 
 namespace classwork5
 {
-    //订单服务需要实现的功能:1.添加订单 2.删除订单 3.查询订单(按订单总金额排序)
-    class OrderService
+    //订单服务需要实现的功能:1.添加订单 2.删除订单 3.查询订单(按订单总金额排序) 4.修改订单(修改客户姓名，客户住址以及添删订单明细)
+    public class OrderService
     {
         public static int count = 0;
         public OrderService() { }
@@ -58,7 +62,7 @@ namespace classwork5
                 orders.Add(neworder);
                 count++;
                 Console.WriteLine("已经成功创建一个订单并添加一个订单明细！\n\n");
-                
+
 
                 //向订单中继续添加订单明细
                 bool flag2 = true;
@@ -125,6 +129,7 @@ namespace classwork5
                 else
                 {
                     orders.Remove(orders[n - 1]);
+                    count--;
                     Console.WriteLine("该订单已经删除,是否继续删除订单？(1.继续 2.退出)");
                     int x = int.Parse(Console.ReadLine());
                     if (n == 1) flag = true;
@@ -162,6 +167,7 @@ namespace classwork5
                         {
                             Console.WriteLine(ord.ToString());
                         }
+                        
                     }
                     else Console.WriteLine("未查询到您的订单！");
                     /*if (flag == true)
@@ -189,18 +195,43 @@ namespace classwork5
                 {
                     Console.WriteLine("请输入你要查询的客户的名称:");
                     string cusName = Console.ReadLine();
-                    var s = from n in orders
-                            where n.selectCustomerName(cusName)
-                            select n;
-                    List<Order> selectorders = s.ToList<Order>();
+                    Console.WriteLine("请选择你需要的排序方式(1.按照订单号从小到大排序  2.按照总金额从小到大排序)");
+                    int num = int.Parse(Console.ReadLine());
+                    List<Order> selectorders = null;
+                    if (num == 1)
+                    {
+                        var s = from n in orders
+                                where n.selectCustomerName(cusName)
+                                orderby n.Id
+                                select n;
+                        selectorders = s.ToList<Order>();
+                    }
+                    else if (num == 2)
+                    {
+                        var s = from n in orders
+                                where n.selectCustomerName(cusName)
+                                orderby n.TotalPrice()
+                                select n;
+                        selectorders = s.ToList<Order>();
+                    }
+                    else
+                    {
+                        var s = from n in orders
+                                where n.selectCustomerName(cusName)
+                                orderby n.Id
+                                select n;
+                        selectorders = s.ToList<Order>();
+                    }
+
                     if (selectorders.Count() != 0)
                     {
                         Console.WriteLine("已查询到您的订单！");
-                        Console.WriteLine("客户名称为"+ cusName + "的订单明细如下:");
+                        Console.WriteLine("客户名称为" + cusName + "的订单明细如下:");
                         foreach (Order ord in selectorders)
                         {
                             Console.WriteLine(ord.ToString());
                         }
+                        
                     }
                     else Console.WriteLine("未查询到您的订单！");
 
@@ -229,7 +260,9 @@ namespace classwork5
                 if (orders[n - 1] == null) Console.WriteLine("没有该订单！无法修改");
                 else Console.WriteLine("请输入你要修改的内容(1.客户名称 2.客户住址):");
                 int m = int.Parse(Console.ReadLine());
-                if(m == 1)
+
+                //修改客户名称
+                if (m == 1)
                 {
                     Console.WriteLine("请输入客户的名称:");
                     string cusName = Console.ReadLine();
@@ -241,7 +274,7 @@ namespace classwork5
                     string cusName2 = Console.ReadLine();
                     if (selectorders != null)
                     {
-                        foreach(Order ord in selectorders)
+                        foreach (Order ord in selectorders)
                         {
                             foreach (OrderDetails ordDetail in ord.orderdetails)
                             {
@@ -254,6 +287,9 @@ namespace classwork5
                     else Console.WriteLine("没有含有该客户名称的订单！");
 
                 }
+
+
+                //修改客户地址
                 else if (m == 2)
                 {
                     Console.WriteLine("请输入客户的住址:");
@@ -279,7 +315,7 @@ namespace classwork5
                     }
                     else
                     {
-                        Console.WriteLine("没有含有该客户地址的订单！一秒之后返回");        
+                        Console.WriteLine("没有含有该客户地址的订单！一秒之后返回");
                         Thread.Sleep(1000);
                         Console.Clear();
                     }
@@ -289,12 +325,16 @@ namespace classwork5
                     bool flag2 = true;
                     while (flag2)
                     {
-                        if (m1 == 1) {
+                        if (m1 == 1)
+                        {
                             flag2 = false;
-                            flag = true; }
-                        else if (m1 == 2) {
+                            flag = true;
+                        }
+                        else if (m1 == 2)
+                        {
                             flag2 = false;
-                            flag = false; }
+                            flag = false;
+                        }
                         else
                         {
                             Console.WriteLine("请选择正确的修改方式！");
@@ -303,11 +343,15 @@ namespace classwork5
                     }
 
                 }
+
+                //未输入正确的修改方式
                 else
                 {
                     Console.WriteLine("请输入正确的修改方式！");
                     flag = false;
                 }
+
+
                 Console.WriteLine("是否要继续修改？(1.继续 2.退出)");
                 int p = int.Parse(Console.ReadLine());
                 bool flag3 = true;
@@ -330,7 +374,39 @@ namespace classwork5
 
                 }
             }
-            
+
+        }
+
+
+        //Export方法 可以将订单序列化为XML文件
+        public void Export()
+        {
+            Console.WriteLine("现有的订单导出如下:\n");
+            //Xml序列化
+            XmlSerializer xmlser = new XmlSerializer(typeof(List<Order>));
+            using (FileStream fs = new FileStream("Order.xml", FileMode.Create))
+                xmlser.Serialize(fs, orders);
+
+            Console.WriteLine(File.ReadAllText("Order.xml"));
+            Console.WriteLine("请按任意键继续...");
+            Console.ReadLine();            
+            Console.Clear();
+        }
+
+        //Import方法 可以将Xml文件载入订单
+        public void Import()
+        {
+            //Xml序列化
+            Console.WriteLine("导入的订单内容如下:\n");
+            XmlSerializer xmlser = new XmlSerializer(typeof(List<Order>));
+            using (FileStream fs = new FileStream("Order.xml", FileMode.Open))
+                orders = (List<Order>)xmlser.Deserialize(fs);
+            foreach (Order ord in orders)
+                Console.WriteLine(ord.ToString());
+            Console.WriteLine("请按任意键继续...");
+            Console.ReadLine();
+            Console.Clear();
+
         }
     }
 }

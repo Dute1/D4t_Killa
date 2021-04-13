@@ -7,18 +7,28 @@ using System.Threading.Tasks;
 namespace classwork5
 {
     //订单明细:订单号 下单时间
-    class Order
+    public class Order
     {
         //创建一个空订单
-        public Order()
-        {
-            OrderTime = DateTime.Now.ToString();
-        }
+
+        public Order() { }
+        
         public customer cus1 = null; //该订单下单的顾客
         //创建一个含有多个商品的链表
         public List<OrderDetails> orderdetails = new List<OrderDetails>();
-        public string OrderTime { get; set; }
+        public string OrderTime { get=> DateTime.Now.ToString();}
         public int Id { get; set; }
+
+        public double TotalPrice()
+        {   
+            double totalPrice = 0;
+            foreach(OrderDetails ordDt in orderdetails)
+            {
+                totalPrice+=ordDt.commodity.price;
+            }
+            return totalPrice;
+
+        }
 
         public string LinkConnect()
         {
@@ -61,7 +71,7 @@ namespace classwork5
         public override bool Equals(object obj)
         {
             Order ord1 = obj as Order;
-            return ord1.Id == Id;
+            return ord1.Id == Id&&ord1.OrderTime == OrderTime;
         }
 
         public override int GetHashCode()
