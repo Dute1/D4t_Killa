@@ -1,0 +1,10 @@
+C:\Users\86136\source\repos\classwork7\classwork7\bin\Debug\classwork7.exe.config
+C:\Users\86136\source\repos\classwork7\classwork7\bin\Debug\classwork7.exe
+C:\Users\86136\source\repos\classwork7\classwork7\bin\Debug\classwork7.pdb
+C:\Users\86136\source\repos\classwork7\classwork7\obj\Debug\classwork7.csprojAssemblyReference.cache
+C:\Users\86136\source\repos\classwork7\classwork7\obj\Debug\classwork7.Form1.resources
+C:\Users\86136\source\repos\classwork7\classwork7\obj\Debug\classwork7.Properties.Resources.resources
+C:\Users\86136\source\repos\classwork7\classwork7\obj\Debug\classwork7.csproj.GenerateResource.cache
+C:\Users\86136\source\repos\classwork7\classwork7\obj\Debug\classwork7.csproj.CoreCompileInputs.cache
+C:\Users\86136\source\repos\classwork7\classwork7\obj\Debug\classwork7.exe
+C:\Users\86136\source\repos\classwork7\classwork7\obj\Debug\classwork7.pdb
