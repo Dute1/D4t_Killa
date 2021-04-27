@@ -1,0 +1,12 @@
+C:\Users\86136\source\repos\classwork8\classwork8\bin\Debug\classwork8.exe.config
+C:\Users\86136\source\repos\classwork8\classwork8\bin\Debug\classwork8.exe
+C:\Users\86136\source\repos\classwork8\classwork8\bin\Debug\classwork8.pdb
+C:\Users\86136\source\repos\classwork8\classwork8\obj\Debug\classwork8.csprojAssemblyReference.cache
+C:\Users\86136\source\repos\classwork8\classwork8\obj\Debug\classwork8.Properties.Resources.resources
+C:\Users\86136\source\repos\classwork8\classwork8\obj\Debug\classwork8.csproj.GenerateResource.cache
+C:\Users\86136\source\repos\classwork8\classwork8\obj\Debug\classwork8.csproj.CoreCompileInputs.cache
+C:\Users\86136\source\repos\classwork8\classwork8\obj\Debug\classwork8.exe
+C:\Users\86136\source\repos\classwork8\classwork8\obj\Debug\classwork8.pdb
+C:\Users\86136\source\repos\classwork8\classwork8\obj\Debug\classwork8.mainForm.resources
+C:\Users\86136\source\repos\classwork8\classwork8\obj\Debug\classwork8.addForm.resources
+C:\Users\86136\source\repos\classwork8\classwork8\obj\Debug\classwork8.modifyForm.resources

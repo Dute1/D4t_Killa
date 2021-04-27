@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Order>
+    <cus1>
+      <customerName>杜特</customerName>
+      <customerAddress>武汉大学</customerAddress>
+    </cus1>
+    <ID>1</ID>
+    <customerName>杜特</customerName>
+    <customerAddress>武汉大学</customerAddress>
+    <sumPrice>3</sumPrice>
+    <orderdetails>
+      <OrderDetails>
+        <commodityID>001</commodityID>
+        <commodityName>苹果</commodityName>
+        <commodityPrice>3</commodityPrice>
+      </OrderDetails>
+    </orderdetails>
+  </Order>
+</ArrayOfOrder>
